@@ -5,6 +5,9 @@ $:.unshift lib unless $:.include?(lib)
 PKG_VERSION = "0.12.0"
 PKG_NAME = "ebayapi"
 PKG_FILE_NAME = "#{PKG_NAME}-#{PKG_VERSION}"
+PKG_FILES = FileList[
+  "lib/**/*", "test/**/*", "examples/**/*", "[A-Z]*", "Rakefile", "init.rb"
+].exclude(/~$|\.svn/)
 
 
 Gem::Specification.new do |s|
