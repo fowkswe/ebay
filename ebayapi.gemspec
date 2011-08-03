@@ -5,9 +5,6 @@ $:.unshift lib unless $:.include?(lib)
 PKG_VERSION = "0.12.0"
 PKG_NAME = "ebayapi"
 PKG_FILE_NAME = "#{PKG_NAME}-#{PKG_VERSION}"
-PKG_FILES = FileList[
-  "lib/**/*", "test/**/*", "examples/**/*", "[A-Z]*", "Rakefile", "init.rb"
-].exclude(/~$|\.svn/)
 
 
 Gem::Specification.new do |s|
@@ -15,7 +12,7 @@ Gem::Specification.new do |s|
   s.version = PKG_VERSION
   s.summary = "Ruby client for the eBay unified schema XML API"
   s.has_rdoc = true
-  s.files = PKG_FILES
+  s.files        = Dir.glob("{bin,lib}/**/*") + %w(LICENSE README.md ROADMAP.md CHANGELOG.md)
   s.require_path = 'lib'
   s.author = "Cody Fauser"
   s.email = "codyfauser@gmail.com"
